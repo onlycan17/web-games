@@ -57,6 +57,17 @@
       "instructions": "Use arrow keys to move",
       "speed": "Speed",
       "length": "Length"
+    },
+    "shellGame": {
+      "name": "Shell Game",
+      "description": "Find the ball under the cups",
+      "watchCarefully": "Watch carefully! The ball is under one of the cups.",
+      "pickCup": "Where is the ball? Click a cup!",
+      "correct": "Correct! +{{score}} points!",
+      "wrong": "Wrong! The ball was under another cup. Try again!",
+      "gameComplete": "Congratulations! You completed all rounds!",
+      "round": "Round",
+      "streak": "Streak"
     }
   }
 }

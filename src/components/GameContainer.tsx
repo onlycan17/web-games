@@ -26,7 +26,7 @@ function GameContainerInner({ children }: GameContainerProps) {
   };
 
   const childrenWithProps = isValidElement(children)
-    ? cloneElement(children as React.ReactElement<any>, { difficulty: gameState.difficulty })
+    ? cloneElement(children as React.ReactElement<{ difficulty?: Difficulty['level'] }>, { difficulty: gameState.difficulty })
     : children;
 
   return (

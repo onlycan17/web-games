@@ -34,6 +34,15 @@ function Home() {
       minPlayers: 1,
       maxPlayers: 1,
     },
+    {
+      id: 'shell-game',
+      name: t('games.shellGame.name'),
+      description: t('games.shellGame.description'),
+      thumbnail: '🥤',
+      category: 'logic',
+      minPlayers: 1,
+      maxPlayers: 1,
+    },
   ];
 
   return (

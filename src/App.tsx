@@ -4,6 +4,7 @@ import GameContainer from './components/GameContainer';
 import NumberGuessing from './games/NumberGuessing';
 import MemoryCards from './games/MemoryCards';
 import SnakeGame from './games/SnakeGame';
+import ShellGame from './games/ShellGame';
 import LanguageSelector from './components/LanguageSelector';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/game/number-guessing" element={<GameContainer><NumberGuessing /></GameContainer>} />
           <Route path="/game/memory-cards" element={<GameContainer><MemoryCards /></GameContainer>} />
           <Route path="/game/snake" element={<GameContainer><SnakeGame /></GameContainer>} />
+          <Route path="/game/shell-game" element={<GameContainer><ShellGame /></GameContainer>} />
         </Routes>
       </div>
     </Router>
