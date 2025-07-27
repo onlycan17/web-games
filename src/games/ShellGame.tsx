@@ -28,6 +28,8 @@ function ShellGame({ difficulty = 'easy' }: ShellGameProps) {
   const [message, setMessage] = useState('');
   const [consecutiveWins, setConsecutiveWins] = useState(0);
   const [round, setRound] = useState(0);
+  const [money, setMoney] = useState(30000); // 시작 금액 3만원
+  const BET_AMOUNT = 5000; // 베팅 금액 5천원
 
   const getDifficultySettings = () => {
     switch (difficulty) {
@@ -55,6 +57,12 @@ function ShellGame({ difficulty = 'easy' }: ShellGameProps) {
     setIsRevealing(true);
     setSelectedCup(null);
     setMessage(t('games.shellGame.watchCarefully'));
+    
+    if (money < BET_AMOUNT) {
+      setMessage(t('games.shellGame.gameOverNoMoney'));
+      endGame();
+      return;
+    }
     
     // Show the ball briefly
     setTimeout(() => {
@@ -99,6 +107,7 @@ function ShellGame({ difficulty = 'easy' }: ShellGameProps) {
 
   const handleCupClick = (cupId: number) => {
     if (isShuffling || isRevealing || selectedCup !== null) return;
+    if (money < BET_AMOUNT) return; // 베팅 금액이 부족하면 클릭 불가
     
     setSelectedCup(cupId);
     setIsRevealing(true);
@@ -110,29 +119,36 @@ function ShellGame({ difficulty = 'easy' }: ShellGameProps) {
       const difficultyMultiplier = difficulty === 'easy' ? 1 : difficulty === 'medium' ? 1.5 : difficulty === 'hard' ? 2 : 3;
       const streakBonus = consecutiveWins * 10;
       const totalScore = Math.floor((baseScore + streakBonus) * difficultyMultiplier);
+      const winAmount = BET_AMOUNT * 2; // 베팅 금액의 2배 획득
       
+      setMoney(money + winAmount);
       updateScore(gameState.currentScore + totalScore);
       setConsecutiveWins(consecutiveWins + 1);
-      setMessage(t('games.shellGame.correct', { score: totalScore }));
+      setMessage(t('games.shellGame.correctWithMoney', { score: totalScore, amount: winAmount.toLocaleString() }));
       
-      if (round < 9) {
-        setTimeout(() => {
-          setRound(round + 1);
-          if (round === 4) {
-            updateLevel(gameState.currentLevel + 1);
-          }
-          startNewRound();
-        }, 2000);
-      } else {
-        setMessage(t('games.shellGame.gameComplete'));
-        endGame();
-      }
-    } else {
-      setConsecutiveWins(0);
-      setMessage(t('games.shellGame.wrong'));
       setTimeout(() => {
+        setRound(round + 1);
+        if (round === 4) {
+          updateLevel(gameState.currentLevel + 1);
+        }
         startNewRound();
       }, 2000);
+    } else {
+      const newMoney = money - BET_AMOUNT;
+      setMoney(newMoney);
+      setConsecutiveWins(0);
+      setMessage(t('games.shellGame.wrongWithMoney', { amount: BET_AMOUNT.toLocaleString() }));
+      
+      if (newMoney <= 0) {
+        setTimeout(() => {
+          setMessage(t('games.shellGame.gameOverNoMoney'));
+          endGame();
+        }, 2000);
+      } else {
+        setTimeout(() => {
+          startNewRound();
+        }, 2000);
+      }
     }
   };
 
@@ -158,7 +174,7 @@ function ShellGame({ difficulty = 'easy' }: ShellGameProps) {
         <div className="stats">
           <span>{t('common.level')}: {gameState.currentLevel}</span>
           <span>{t('common.score')}: {gameState.currentScore}</span>
-          <span>{t('games.shellGame.round')}: {round + 1}/10</span>
+          <span>{t('games.shellGame.money')}: ₩{money.toLocaleString()}</span>
           <span>{t('games.shellGame.streak')}: {consecutiveWins}</span>
         </div>
       </div>
@@ -186,6 +202,7 @@ function ShellGame({ difficulty = 'easy' }: ShellGameProps) {
           <button className="restart-btn" onClick={() => {
             setRound(0);
             setConsecutiveWins(0);
+            setMoney(30000); // 금액 초기화
             startGame();
             startNewRound();
           }}>

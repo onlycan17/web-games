@@ -62,12 +62,16 @@
       "name": "야바위",
       "description": "컵 아래 숨겨진 공을 찾는 게임",
       "watchCarefully": "잘 보세요! 공이 컵 중 하나 아래에 있습니다.",
-      "pickCup": "공이 어디에 있을까요? 컵을 클릭하세요!",
+      "pickCup": "공이 어디에 있을까요? 컵을 클릭하세요! (베팅: ₩5,000)",
       "correct": "정답! +{{score}}점!",
+      "correctWithMoney": "정답! +{{score}}점! ₩{{amount}} 획득!",
       "wrong": "틀렸습니다! 공은 다른 컵 아래에 있었습니다. 다시 시도하세요!",
+      "wrongWithMoney": "틀렸습니다! ₩{{amount}} 잃음. 다시 시도하세요!",
       "gameComplete": "축하합니다! 모든 라운드를 완료했습니다!",
+      "gameOverNoMoney": "게임 오버! 돈이 모두 떨어졌습니다.",
       "round": "라운드",
-      "streak": "연속 정답"
+      "streak": "연속 정답",
+      "money": "보유 금액"
     }
   }
 }

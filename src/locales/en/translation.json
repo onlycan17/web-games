@@ -62,12 +62,16 @@
       "name": "Shell Game",
       "description": "Find the ball under the cups",
       "watchCarefully": "Watch carefully! The ball is under one of the cups.",
-      "pickCup": "Where is the ball? Click a cup!",
+      "pickCup": "Where is the ball? Click a cup! (Bet: ₩5,000)",
       "correct": "Correct! +{{score}} points!",
+      "correctWithMoney": "Correct! +{{score}} points! Won ₩{{amount}}!",
       "wrong": "Wrong! The ball was under another cup. Try again!",
+      "wrongWithMoney": "Wrong! Lost ₩{{amount}}. Try again!",
       "gameComplete": "Congratulations! You completed all rounds!",
+      "gameOverNoMoney": "Game Over! You've run out of money.",
       "round": "Round",
-      "streak": "Streak"
+      "streak": "Streak",
+      "money": "Money"
     }
   }
 }
