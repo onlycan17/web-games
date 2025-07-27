@@ -1,0 +1,62 @@
+{
+  "common": {
+    "difficulty": "난이도",
+    "easy": "쉬움",
+    "medium": "보통",
+    "hard": "어려움",
+    "expert": "전문가",
+    "score": "점수",
+    "level": "레벨",
+    "gameOver": "게임 오버",
+    "playAgain": "다시 하기",
+    "backToHome": "홈으로 돌아가기",
+    "start": "시작",
+    "pause": "일시정지",
+    "resume": "계속하기",
+    "newGame": "새 게임"
+  },
+  "home": {
+    "title": "웹 게임 센터",
+    "subtitle": "간단하고 재미있는 게임들을 즐겨보세요!",
+    "categories": {
+      "logic": "논리",
+      "memory": "기억력",
+      "action": "액션"
+    }
+  },
+  "games": {
+    "numberGuessing": {
+      "name": "숫자 맞추기",
+      "description": "컴퓨터가 생각한 숫자를 맞추는 게임",
+      "hint": "{{min}}과 {{max}} 사이의 숫자를 입력하세요",
+      "tooHigh": "너무 커요! 더 작은 숫자를 시도해보세요.",
+      "tooLow": "너무 작아요! 더 큰 숫자를 시도해보세요.",
+      "correct": "정답! {{attempts}}번 만에 맞추셨습니다!",
+      "guess": "추측하기",
+      "yourGuess": "당신의 추측",
+      "attempts": "시도 횟수",
+      "invalidInput": "올바른 숫자를 입력해주세요!",
+      "outOfRange": "{{min}}부터 {{max}} 사이의 숫자를 입력해주세요!",
+      "answer": "정답은 {{number}}였습니다",
+      "remainingAttempts": "남은 기회: {{count}}번",
+      "history": "입력 기록"
+    },
+    "memoryCards": {
+      "name": "메모리 카드",
+      "description": "같은 카드 쌍을 찾는 기억력 게임",
+      "moves": "이동 횟수",
+      "pairs": "찾은 쌍",
+      "timeBonus": "시간 보너스",
+      "totalScore": "총 점수",
+      "congratulations": "축하합니다! 모든 쌍을 찾았습니다!",
+      "nextLevel": "다음 레벨"
+    },
+    "snake": {
+      "name": "스네이크",
+      "description": "뱀을 조종해 먹이를 먹는 게임",
+      "instructions": "화살표 키로 이동하세요",
+      "speed": "속도",
+      "length": "길이"
+    }
+  }
+}

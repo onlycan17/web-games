@@ -1,0 +1,106 @@
+.snake-game {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.game-info {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.game-info h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.stats span {
+  background: #f0f0f0;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.game-board {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.snake-canvas {
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.game-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.game-overlay h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.game-overlay p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.start-btn,
+.restart-btn {
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.start-btn:hover,
+.restart-btn:hover {
+  background: #5a67d8;
+}
+
+.instructions {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .snake-game {
+    padding: 1rem;
+  }
+
+  .snake-canvas {
+    max-width: 100%;
+    height: auto;
+  }
+}

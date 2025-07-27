@@ -1,0 +1,62 @@
+{
+  "common": {
+    "difficulty": "Difficulty",
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard",
+    "expert": "Expert",
+    "score": "Score",
+    "level": "Level",
+    "gameOver": "Game Over",
+    "playAgain": "Play Again",
+    "backToHome": "Back to Home",
+    "start": "Start",
+    "pause": "Pause",
+    "resume": "Resume",
+    "newGame": "New Game"
+  },
+  "home": {
+    "title": "Web Game Center",
+    "subtitle": "Enjoy simple and fun games!",
+    "categories": {
+      "logic": "Logic",
+      "memory": "Memory",
+      "action": "Action"
+    }
+  },
+  "games": {
+    "numberGuessing": {
+      "name": "Number Guessing",
+      "description": "Guess the number the computer is thinking of",
+      "hint": "Enter a number between {{min}} and {{max}}",
+      "tooHigh": "Too high! Try a lower number.",
+      "tooLow": "Too low! Try a higher number.",
+      "correct": "Correct! You guessed the number in {{attempts}} attempts!",
+      "guess": "Guess",
+      "yourGuess": "Your Guess",
+      "attempts": "Attempts",
+      "invalidInput": "Please enter a valid number!",
+      "outOfRange": "Please enter a number between {{min}} and {{max}}!",
+      "answer": "The answer was {{number}}",
+      "remainingAttempts": "{{count}} attempts left",
+      "history": "Guess History"
+    },
+    "memoryCards": {
+      "name": "Memory Cards",
+      "description": "Find matching card pairs",
+      "moves": "Moves",
+      "pairs": "Pairs",
+      "timeBonus": "Time Bonus",
+      "totalScore": "Total Score",
+      "congratulations": "Congratulations! You found all pairs!",
+      "nextLevel": "Next Level"
+    },
+    "snake": {
+      "name": "Snake",
+      "description": "Control the snake to eat food",
+      "instructions": "Use arrow keys to move",
+      "speed": "Speed",
+      "length": "Length"
+    }
+  }
+}

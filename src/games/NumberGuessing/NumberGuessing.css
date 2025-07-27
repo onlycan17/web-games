@@ -1,0 +1,145 @@
+.number-guessing {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+.game-info {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.game-info h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.1rem;
+}
+
+.stats span {
+  background: #f0f0f0;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.game-area {
+  text-align: center;
+}
+
+.message {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-area {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.input-area input {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+}
+
+.input-area input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.input-area button {
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.input-area button:hover {
+  background: #5a67d8;
+}
+
+.history {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.history h3 {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.history-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.history-item {
+  background: #f0f0f0;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.restart-btn {
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  background: #48bb78;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: background 0.3s ease;
+}
+
+.restart-btn:hover {
+  background: #38a169;
+}
+
+@media (max-width: 600px) {
+  .number-guessing {
+    padding: 1.5rem;
+  }
+  
+  .stats {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .input-area {
+    flex-direction: column;
+  }
+  
+  .input-area input {
+    width: 100%;
+  }
+}
