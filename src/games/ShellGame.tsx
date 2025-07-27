@@ -15,7 +15,7 @@ interface Cup {
 }
 
 function ShellGame({ difficulty = 'easy' }: ShellGameProps) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { gameState, startGame, endGame, updateScore, updateLevel } = useGame();
   const [cups, setCups] = useState<Cup[]>([
     { id: 0, position: 0, hasBall: false },
@@ -28,8 +28,22 @@ function ShellGame({ difficulty = 'easy' }: ShellGameProps) {
   const [message, setMessage] = useState('');
   const [consecutiveWins, setConsecutiveWins] = useState(0);
   const [round, setRound] = useState(0);
-  const [money, setMoney] = useState(30000); // 시작 금액 3만원
-  const BET_AMOUNT = 5000; // 베팅 금액 5천원
+  
+  // 언어에 따른 금액 설정
+  const isKorean = i18n.language === 'ko';
+  const INITIAL_MONEY = isKorean ? 30000 : 30; // 한국: 3만원, 미국: $30
+  const BET_AMOUNT = isKorean ? 5000 : 5; // 한국: 5천원, 미국: $5
+  const WIN_AMOUNT = isKorean ? 1000 : 1; // 한국: 1천원, 미국: $1
+  
+  const [money, setMoney] = useState(INITIAL_MONEY);
+
+  const formatMoney = (amount: number, isKorean: boolean) => {
+    if (isKorean) {
+      return `₩${amount.toLocaleString()}`;
+    } else {
+      return `$${amount}`;
+    }
+  };
 
   const getDifficultySettings = () => {
     switch (difficulty) {
@@ -119,12 +133,15 @@ function ShellGame({ difficulty = 'easy' }: ShellGameProps) {
       const difficultyMultiplier = difficulty === 'easy' ? 1 : difficulty === 'medium' ? 1.5 : difficulty === 'hard' ? 2 : 3;
       const streakBonus = consecutiveWins * 10;
       const totalScore = Math.floor((baseScore + streakBonus) * difficultyMultiplier);
-      const winAmount = BET_AMOUNT * 2; // 베팅 금액의 2배 획득
+      const netGain = WIN_AMOUNT - BET_AMOUNT; // 베팅 금액을 제외한 순수익
       
-      setMoney(money + winAmount);
+      setMoney(money + netGain);
       updateScore(gameState.currentScore + totalScore);
       setConsecutiveWins(consecutiveWins + 1);
-      setMessage(t('games.shellGame.correctWithMoney', { score: totalScore, amount: winAmount.toLocaleString() }));
+      setMessage(t('games.shellGame.correctWithMoney', { 
+        score: totalScore, 
+        amount: formatMoney(WIN_AMOUNT, isKorean) 
+      }));
       
       setTimeout(() => {
         setRound(round + 1);
@@ -137,7 +154,9 @@ function ShellGame({ difficulty = 'easy' }: ShellGameProps) {
       const newMoney = money - BET_AMOUNT;
       setMoney(newMoney);
       setConsecutiveWins(0);
-      setMessage(t('games.shellGame.wrongWithMoney', { amount: BET_AMOUNT.toLocaleString() }));
+      setMessage(t('games.shellGame.wrongWithMoney', { 
+        amount: formatMoney(BET_AMOUNT, isKorean) 
+      }));
       
       if (newMoney <= 0) {
         setTimeout(() => {
@@ -174,7 +193,7 @@ function ShellGame({ difficulty = 'easy' }: ShellGameProps) {
         <div className="stats">
           <span>{t('common.level')}: {gameState.currentLevel}</span>
           <span>{t('common.score')}: {gameState.currentScore}</span>
-          <span>{t('games.shellGame.money')}: ₩{money.toLocaleString()}</span>
+          <span>{t('games.shellGame.money')}: {formatMoney(money, isKorean)}</span>
           <span>{t('games.shellGame.streak')}: {consecutiveWins}</span>
         </div>
       </div>
@@ -202,7 +221,7 @@ function ShellGame({ difficulty = 'easy' }: ShellGameProps) {
           <button className="restart-btn" onClick={() => {
             setRound(0);
             setConsecutiveWins(0);
-            setMoney(30000); // 금액 초기화
+            setMoney(INITIAL_MONEY); // 금액 초기화
             startGame();
             startNewRound();
           }}>
