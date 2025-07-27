@@ -81,7 +81,7 @@
   justify-content: center;
   padding-top: 20px;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .cup-body::before {
@@ -98,7 +98,9 @@
 
 .ball {
   position: absolute;
-  bottom: -15px;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 2rem;
   animation: bounce 0.5s ease-in-out;
   z-index: 0;
@@ -106,10 +108,10 @@
 
 @keyframes bounce {
   0%, 100% {
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateX(-50%) translateY(-20px);
   }
 }
 
@@ -146,8 +148,8 @@
   }
 
   .ball {
-    font-size: 2rem;
-    bottom: -5px;
+    font-size: 1.5rem;
+    bottom: -20px;
   }
 
   .message {

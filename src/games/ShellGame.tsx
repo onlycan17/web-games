@@ -174,11 +174,10 @@ function ShellGame({ difficulty = 'easy' }: ShellGameProps) {
               style={getCupStyle(cup)}
               onClick={() => handleCupClick(cup.id)}
             >
-              <div className="cup-body">
-                {isRevealing && cup.hasBall && (
-                  <div className="ball">🔴</div>
-                )}
-              </div>
+              <div className="cup-body"></div>
+              {isRevealing && cup.hasBall && (
+                <div className="ball">🟡</div>
+              )}
             </div>
           ))}
         </div>
