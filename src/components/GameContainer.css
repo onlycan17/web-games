@@ -8,10 +8,12 @@
 .game-header {
   background: white;
   padding: 1rem 2rem;
+  padding-right: 8rem; /* Add space for language selector */
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .back-button {
@@ -65,4 +67,22 @@
   justify-content: center;
   align-items: center;
   padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .game-header {
+    padding: 0.75rem 1rem;
+    padding-right: 7rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .difficulty-selector {
+    gap: 0.5rem;
+  }
+  
+  .difficulty-btn {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+  }
 }

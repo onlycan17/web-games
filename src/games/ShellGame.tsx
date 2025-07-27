@@ -147,7 +147,7 @@ function ShellGame({ difficulty = 'easy' }: ShellGameProps) {
     const baseLeft = 33.33;
     return {
       left: `${baseLeft * cup.position}%`,
-      transform: `translateX(-50%) ${isRevealing && cup.hasBall ? 'translateY(-20px)' : ''}`,
+      transform: `translateX(-50%) ${isRevealing && !cup.hasBall ? 'translateY(-30px) rotateZ(15deg)' : ''}`,
     };
   };
 
