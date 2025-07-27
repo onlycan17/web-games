@@ -21,7 +21,8 @@
     "categories": {
       "logic": "논리",
       "memory": "기억력",
-      "action": "액션"
+      "action": "액션",
+      "strategy": "전략"
     }
   },
   "games": {
@@ -72,6 +73,32 @@
       "round": "라운드",
       "streak": "연속 정답",
       "money": "보유 금액"
+    },
+    "yutNori": {
+      "name": "윷놀이",
+      "description": "한국 전통 보드 게임",
+      "selectMode": "게임 모드를 선택하세요",
+      "singlePlayer": "싱글 플레이어 (컴퓨터와 대전)",
+      "multiPlayer": "멀티 플레이어 (로컬)",
+      "player1": "플레이어 1",
+      "player2": "플레이어 2",
+      "computer": "컴퓨터",
+      "gameStart": "게임 시작! {{player}} 차례입니다",
+      "rollYut": "윷 던지기",
+      "movePiece": "말 이동",
+      "selectPiece": "결과: {{result}}. 이동할 말을 선택하세요",
+      "rollAgain": "{{result}}! 한 번 더 던지세요!",
+      "pieceFinished": "말이 도착했습니다!",
+      "pieceCaptured": "상대 말을 잡았습니다! 한 번 더 던지세요!",
+      "playerWon": "{{player}} 승리!",
+      "results": {
+        "do": "도 (1칸)",
+        "gae": "개 (2칸)",
+        "geol": "걸 (3칸)",
+        "yut": "윷 (4칸)",
+        "mo": "모 (5칸)",
+        "back-do": "뒷도 (-1칸)"
+      }
     }
   }
 }

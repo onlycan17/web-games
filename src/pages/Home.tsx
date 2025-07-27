@@ -43,6 +43,15 @@ function Home() {
       minPlayers: 1,
       maxPlayers: 1,
     },
+    {
+      id: 'yut-nori',
+      name: t('games.yutNori.name'),
+      description: t('games.yutNori.description'),
+      thumbnail: '🎲',
+      category: 'strategy',
+      minPlayers: 1,
+      maxPlayers: 2,
+    },
   ];
 
   return (

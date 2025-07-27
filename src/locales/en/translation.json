@@ -21,7 +21,8 @@
     "categories": {
       "logic": "Logic",
       "memory": "Memory",
-      "action": "Action"
+      "action": "Action",
+      "strategy": "Strategy"
     }
   },
   "games": {
@@ -72,6 +73,32 @@
       "round": "Round",
       "streak": "Streak",
       "money": "Money"
+    },
+    "yutNori": {
+      "name": "Yut Nori",
+      "description": "Traditional Korean board game",
+      "selectMode": "Select game mode",
+      "singlePlayer": "Single Player (vs Computer)",
+      "multiPlayer": "Multi Player (Local)",
+      "player1": "Player 1",
+      "player2": "Player 2",
+      "computer": "Computer",
+      "gameStart": "Game started! {{player}}'s turn",
+      "rollYut": "Roll Yut",
+      "movePiece": "Move Piece",
+      "selectPiece": "Result: {{result}}. Select a piece to move",
+      "rollAgain": "{{result}}! Roll again!",
+      "pieceFinished": "Piece reached the goal!",
+      "pieceCaptured": "Captured opponent's piece! Roll again!",
+      "playerWon": "{{player}} wins!",
+      "results": {
+        "do": "Do (1)",
+        "gae": "Gae (2)",
+        "geol": "Geol (3)",
+        "yut": "Yut (4)",
+        "mo": "Mo (5)",
+        "back-do": "Back Do (-1)"
+      }
     }
   }
 }
