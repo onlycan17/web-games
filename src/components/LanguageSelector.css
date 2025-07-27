@@ -4,7 +4,7 @@
   position: fixed;
   top: 1rem;
   right: 1rem;
-  z-index: 1000;
+  z-index: 9999;
 }
 
 .language-selector button {

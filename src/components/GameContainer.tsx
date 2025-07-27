@@ -32,22 +32,24 @@ function GameContainerInner({ children }: GameContainerProps) {
   return (
     <div className="game-container">
       <header className="game-header">
-        <Link to="/" className="back-button">
-          ← {t('common.backToHome')}
-        </Link>
-        
-        <div className="difficulty-selector">
-          <span>{t('common.difficulty')}:</span>
-          {difficulties.map((diff) => (
-            <button
-              key={diff.level}
-              className={`difficulty-btn ${gameState.difficulty === diff.level ? 'active' : ''}`}
-              onClick={() => handleDifficultyChange(diff.level)}
-              disabled={gameState.isPlaying}
-            >
-              {diff.label}
-            </button>
-          ))}
+        <div className="header-left">
+          <Link to="/" className="back-button">
+            ← {t('common.backToHome')}
+          </Link>
+          
+          <div className="difficulty-selector">
+            <span>{t('common.difficulty')}:</span>
+            {difficulties.map((diff) => (
+              <button
+                key={diff.level}
+                className={`difficulty-btn ${gameState.difficulty === diff.level ? 'active' : ''}`}
+                onClick={() => handleDifficultyChange(diff.level)}
+                disabled={gameState.isPlaying}
+              >
+                {diff.label}
+              </button>
+            ))}
+          </div>
         </div>
       </header>
       
